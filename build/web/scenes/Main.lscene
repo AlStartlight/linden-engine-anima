@@ -1,0 +1,2815 @@
+{
+  "format": "linden-scene",
+  "version": 2,
+  "name": "Main",
+  "settings": {
+    "ambientColor": "#152d2b",
+    "ambientIntensity": 0.65,
+    "skybox": null,
+    "environment": "room",
+    "environmentIntensity": 1.25,
+    "backgroundBlurriness": 0,
+    "toneMapping": "agx",
+    "exposure": 1.05,
+    "fog": {
+      "enabled": true,
+      "color": "#152d2b",
+      "type": "exp2",
+      "near": 5,
+      "far": 140,
+      "density": 0.015
+    },
+    "shadowQuality": "high",
+    "sun": {
+      "enabled": true,
+      "color": "#e2e8f0",
+      "intensity": 2.6,
+      "direction": [
+        0.45,
+        0.95,
+        -0.35
+      ]
+    },
+    "postFx": {
+      "enabled": true,
+      "ao": true,
+      "aoIntensity": 1.2,
+      "bloom": true,
+      "bloomStrength": 0.35,
+      "bloomThreshold": 0.94,
+      "bloomRadius": 0.4,
+      "antialias": "smaa"
+    }
+  },
+  "entities": [
+    {
+      "id": "camera-rig",
+      "name": "Camera Rig",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "MainCamera"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              3.6,
+              5.6
+            ],
+            "rotation": [
+              -15,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Camera",
+          "data": {
+            "fov": 62,
+            "near": 0.1,
+            "far": 500,
+            "isActive": true
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/CamTest.ts",
+            "props": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "sun-light",
+      "name": "Swamp Moonlight",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              15,
+              25,
+              -20
+            ],
+            "rotation": [
+              50,
+              30,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "directional",
+            "color": "#e2e8f0",
+            "intensity": 2.6,
+            "castShadow": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "swamp-water",
+      "name": "Bioluminescent Swamp Water",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "SwampWater"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              -0.3,
+              -60
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              60,
+              0.2,
+              140
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#0e7490",
+            "roughness": 0.08,
+            "metalness": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "swamp-bed",
+      "name": "Deep Swamp Bed",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              -2.5,
+              -60
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              64,
+              0.4,
+              144
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#022c22",
+            "roughness": 0.95,
+            "metalness": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "player",
+      "name": "FrogKnight",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Player"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.2,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "CharacterController",
+          "data": {
+            "stepOffset": 0.45,
+            "slopeLimit": 50,
+            "skinWidth": 0.08
+          }
+        },
+        {
+          "type": "CapsuleCollider",
+          "data": {
+            "radius": 0.45,
+            "height": 1.2
+          }
+        },
+        {
+          "type": "CharacterMovement",
+          "data": {
+            "mode": "walk",
+            "walkSpeed": 4.5,
+            "sprintSpeed": 7.6,
+            "jumpHeight": 2.3,
+            "gravity": 21,
+            "airControl": 0.55,
+            "maxJumps": 1,
+            "orientToMovement": true,
+            "cameraRelative": true,
+            "moveAction": "Move",
+            "jumpAction": "Jump",
+            "sprintAction": "Sprint",
+            "lookAction": "Look"
+          }
+        },
+        {
+          "type": "HtmlUI",
+          "data": {
+            "mode": "screen",
+            "pointerEvents": true,
+            "src": "ui/hud.html"
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/FrogKnightController.ts",
+            "props": {
+              "maxGrappleDist": 24,
+              "reelSpeed": 4.8,
+              "swingStrength": 46
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "frog-visual-model",
+      "name": "FrogKnightVisual",
+      "parentId": "player",
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              -0.6,
+              0
+            ],
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Model",
+          "data": {
+            "collider": "none",
+            "merge": true,
+            "parts": [
+              {
+                "id": "feet_l",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.24,
+                    0.08,
+                    0.32
+                  ],
+                  "radius": 0.03
+                },
+                "position": [
+                  -0.22,
+                  0.04,
+                  0.08
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#285238"
+                }
+              },
+              {
+                "id": "feet_r",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.24,
+                    0.08,
+                    0.32
+                  ],
+                  "radius": 0.03
+                },
+                "position": [
+                  0.22,
+                  0.04,
+                  0.08
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#285238"
+                }
+              },
+              {
+                "id": "legs_l",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.18
+                },
+                "position": [
+                  -0.25,
+                  0.2,
+                  -0.04
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#315b48"
+                }
+              },
+              {
+                "id": "legs_r",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.18
+                },
+                "position": [
+                  0.25,
+                  0.2,
+                  -0.04
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#315b48"
+                }
+              },
+              {
+                "id": "body",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.33
+                },
+                "position": [
+                  0,
+                  0.38,
+                  0
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#315b48"
+                }
+              },
+              {
+                "id": "belly",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.22
+                },
+                "position": [
+                  0,
+                  0.28,
+                  0.16
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#9ca37d"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "breastplate",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.46,
+                    0.3,
+                    0.34
+                  ],
+                  "radius": 0.08
+                },
+                "position": [
+                  0,
+                  0.44,
+                  0.03
+                ],
+                "material": {
+                  "preset": "metal_steel",
+                  "color": "#475569"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "emblem",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.12,
+                    0.12,
+                    0.03
+                  ],
+                  "radius": 0.02
+                },
+                "position": [
+                  0,
+                  0.45,
+                  0.21
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  45
+                ],
+                "material": {
+                  "preset": "metal_gold",
+                  "color": "#e8be67"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "cape",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.42,
+                    0.52,
+                    0.06
+                  ],
+                  "radius": 0.02
+                },
+                "position": [
+                  0,
+                  0.38,
+                  -0.2
+                ],
+                "rotation": [
+                  -15,
+                  0,
+                  0
+                ],
+                "material": {
+                  "preset": "fabric_cotton",
+                  "color": "#166534"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "head",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.31
+                },
+                "position": [
+                  0,
+                  0.7,
+                  0.02
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#315b48"
+                }
+              },
+              {
+                "id": "eye_bump_l",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.13
+                },
+                "position": [
+                  -0.2,
+                  0.88,
+                  0.08
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#315b48"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "eye_bump_r",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.13
+                },
+                "position": [
+                  0.2,
+                  0.88,
+                  0.08
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#315b48"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "eyeball_l",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.09
+                },
+                "position": [
+                  -0.2,
+                  0.89,
+                  0.16
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#d97706"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "eyeball_r",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.09
+                },
+                "position": [
+                  0.2,
+                  0.89,
+                  0.16
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#d97706"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "pupil_l",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.08,
+                    0.025,
+                    0.02
+                  ],
+                  "radius": 0.01
+                },
+                "position": [
+                  -0.2,
+                  0.89,
+                  0.24
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#09090b"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "pupil_r",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.08,
+                    0.025,
+                    0.02
+                  ],
+                  "radius": 0.01
+                },
+                "position": [
+                  0.2,
+                  0.89,
+                  0.24
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#09090b"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "helmet",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.38,
+                    0.2,
+                    0.34
+                  ],
+                  "radius": 0.06
+                },
+                "position": [
+                  0,
+                  0.88,
+                  -0.04
+                ],
+                "material": {
+                  "preset": "metal_steel",
+                  "color": "#475569"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "helmet_visor",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.26,
+                    0.05,
+                    0.04
+                  ],
+                  "radius": 0.01
+                },
+                "position": [
+                  0,
+                  0.82,
+                  0.16
+                ],
+                "material": {
+                  "preset": "metal_gold",
+                  "color": "#e8be67"
+                },
+                "allowOverlap": true
+              },
+              {
+                "id": "plume",
+                "shape": {
+                  "type": "capsule",
+                  "radius": 0.035,
+                  "length": 0.22
+                },
+                "position": [
+                  0,
+                  1.05,
+                  -0.07
+                ],
+                "rotation": [
+                  -25,
+                  0,
+                  0
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#06b6d4"
+                }
+              },
+              {
+                "id": "shoulder_l",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.12
+                },
+                "position": [
+                  -0.34,
+                  0.48,
+                  0
+                ],
+                "material": {
+                  "preset": "metal_steel",
+                  "color": "#64748b"
+                }
+              },
+              {
+                "id": "shoulder_r",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.12
+                },
+                "position": [
+                  0.34,
+                  0.48,
+                  0
+                ],
+                "material": {
+                  "preset": "metal_steel",
+                  "color": "#64748b"
+                }
+              },
+              {
+                "id": "shield",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.06,
+                    0.44,
+                    0.36
+                  ],
+                  "radius": 0.06
+                },
+                "position": [
+                  -0.42,
+                  0.38,
+                  0.12
+                ],
+                "material": {
+                  "preset": "wood_teak"
+                }
+              },
+              {
+                "id": "shield_boss",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.06
+                },
+                "position": [
+                  -0.46,
+                  0.38,
+                  0.12
+                ],
+                "material": {
+                  "preset": "metal_gold",
+                  "color": "#e8be67"
+                }
+              },
+              {
+                "id": "sword_blade",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.035,
+                    0.54,
+                    0.02
+                  ],
+                  "radius": 0.01
+                },
+                "position": [
+                  0.42,
+                  0.44,
+                  0.18
+                ],
+                "rotation": [
+                  30,
+                  0,
+                  -15
+                ],
+                "material": {
+                  "preset": "metal_steel",
+                  "color": "#cbd5e1"
+                }
+              },
+              {
+                "id": "sword_guard",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.12,
+                    0.03,
+                    0.04
+                  ],
+                  "radius": 0.01
+                },
+                "position": [
+                  0.38,
+                  0.24,
+                  0.1
+                ],
+                "rotation": [
+                  30,
+                  0,
+                  -15
+                ],
+                "material": {
+                  "preset": "metal_gold",
+                  "color": "#e8be67"
+                }
+              }
+            ],
+            "placement": "floor"
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "shrine-platform",
+      "name": "Wake Shrine Platform",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.1,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              10,
+              0.6,
+              10
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 10,
+              "y": 0.6,
+              "z": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "shrine-col-1",
+      "name": "Shrine Pillar NW",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -3.8,
+              2,
+              -3.8
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.8,
+              3.8,
+              0.8
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#334155",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "shrine-col-2",
+      "name": "Shrine Pillar NE",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              3.8,
+              2,
+              -3.8
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.8,
+              3.8,
+              0.8
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#334155",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "shrine-col-3",
+      "name": "Shrine Pillar SW",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -3.8,
+              2,
+              3.8
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.8,
+              3.8,
+              0.8
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#334155",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "shrine-col-4",
+      "name": "Shrine Pillar SE",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              3.8,
+              2,
+              3.8
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.8,
+              3.8,
+              0.8
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#334155",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "shrine-torch",
+      "name": "Shrine Warm Light",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.8,
+              -1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "point",
+            "color": "#f59e0b",
+            "intensity": 35,
+            "range": 18,
+            "castShadow": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "living-root-arch",
+      "name": "Living Root Arched Trunk",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              4.4,
+              -10.5
+            ],
+            "rotation": [
+              12,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              0.8,
+              9.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#3f2b1c",
+            "roughness": 0.9,
+            "metalness": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "living-root-anchor",
+      "name": "Living Root Grapple Anchor",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "GrapplePoint"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              4.6,
+              -10.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#fbbf24",
+            "roughness": 0.2,
+            "metalness": 0.4
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.8,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "root-landing-platform",
+      "name": "Root Crossing Landing",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.15,
+              -16.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              8,
+              0.6,
+              6
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 8,
+              "y": 0.6,
+              "z": 6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "lily-pad-1",
+      "name": "Giant Lily Pad 1",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "LilyPad",
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -3,
+              0.2,
+              -21
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.4,
+              0.35,
+              3.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#10b981",
+            "roughness": 0.45,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 3.4,
+              "y": 0.35,
+              "z": 3.4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "petal-1-collectible",
+      "name": "Memory Petal 1",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "MemoryPetal"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -3,
+              1.3,
+              -21
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.45,
+              0.45,
+              0.45
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#fcd34d",
+            "roughness": 0.15,
+            "metalness": 0.3
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.6,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "lily-pad-2",
+      "name": "Giant Lily Pad 2",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "LilyPad",
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              3,
+              0.25,
+              -26
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.5,
+              0.35,
+              3.5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#10b981",
+            "roughness": 0.45,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 3.5,
+              "y": 0.35,
+              "z": 3.5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "lily-pad-3",
+      "name": "Giant Lily Pad 3",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "LilyPad",
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.2,
+              -31
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3.6,
+              0.35,
+              3.6
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#10b981",
+            "roughness": 0.45,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 3.6,
+              "y": 0.35,
+              "z": 3.6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "canopy-vine-anchor",
+      "name": "Canopy Vine Anchor",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "GrapplePoint"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              5.6,
+              -26
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.9,
+              0.9,
+              0.9
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#8debff",
+            "roughness": 0.2,
+            "metalness": 0.3
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.8,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "ruin-courtyard",
+      "name": "Three Streams Courtyard Floor",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.25,
+              -43
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              16,
+              0.6,
+              17
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 16,
+              "y": 0.6,
+              "z": 17
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ruin-wall-left",
+      "name": "Three Streams Left Wall",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -8,
+              2.2,
+              -43
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.8,
+              3.8,
+              17
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#334155",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 17
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ruin-wall-right",
+      "name": "Three Streams Right Wall",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              8,
+              2.2,
+              -43
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.8,
+              3.8,
+              17
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#334155",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 17
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "valve-1",
+      "name": "Water Valve 1",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "WaterValve"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -4,
+              1.05,
+              -37
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.85,
+              0.2,
+              0.85
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#eab308",
+            "roughness": 0.25,
+            "metalness": 0.8
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "valve-2",
+      "name": "Water Valve 2",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "WaterValve"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.05,
+              -36
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.85,
+              0.2,
+              0.85
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#eab308",
+            "roughness": 0.25,
+            "metalness": 0.8
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "valve-3",
+      "name": "Water Valve 3",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "WaterValve"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              4,
+              1.05,
+              -37
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.85,
+              0.2,
+              0.85
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#eab308",
+            "roughness": 0.25,
+            "metalness": 0.8
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "water-channel-1",
+      "name": "Water Channel Left",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -4,
+              0.38,
+              -44.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.9,
+              0.1,
+              11
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#32d9d0",
+            "roughness": 0.1,
+            "metalness": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "water-channel-2",
+      "name": "Water Channel Mid",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.38,
+              -44
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.9,
+              0.1,
+              12
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#32d9d0",
+            "roughness": 0.1,
+            "metalness": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "water-channel-3",
+      "name": "Water Channel Right",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              4,
+              0.38,
+              -44.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.9,
+              0.1,
+              11
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#32d9d0",
+            "roughness": 0.1,
+            "metalness": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "rune-gate-door",
+      "name": "Ancient Rune Gate Door",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "RuneGateDoor"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.4,
+              -50.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              6.4,
+              4.4,
+              0.6
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.7,
+            "metalness": 0.4
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 6.4,
+              "y": 4.4,
+              "z": 0.6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "petal-2-collectible",
+      "name": "Memory Petal 2",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "MemoryPetal"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -6.5,
+              1.6,
+              -45
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.45,
+              0.45,
+              0.45
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#fcd34d",
+            "roughness": 0.15,
+            "metalness": 0.3
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.6,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "arena-platform",
+      "name": "Regent Arena Platform",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.25,
+              -63
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              18,
+              0.6,
+              21
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 18,
+              "y": 0.6,
+              "z": 21
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "arena-lantern-anchor",
+      "name": "Arena Lantern Anchor",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "GrapplePoint"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              6.2,
+              -63
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.95,
+              0.95,
+              0.95
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#fbbf24",
+            "roughness": 0.25,
+            "metalness": 0.6
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.8,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "bog-skitter",
+      "name": "Bog Skitter",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Enemy",
+        "BogSkitter"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.6,
+              -65
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "CapsuleCollider",
+          "data": {
+            "radius": 0.6,
+            "height": 1.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/BogSkitterAI.ts",
+            "props": {
+              "hp": 30,
+              "chargeSpeed": 5.2
+            }
+          }
+        },
+        {
+          "type": "Model",
+          "data": {
+            "placement": "floor",
+            "collider": "none",
+            "merge": true,
+            "parts": [
+              {
+                "id": "skitter_body",
+                "shape": {
+                  "type": "roundedBox",
+                  "size": [
+                    0.75,
+                    0.38,
+                    0.95
+                  ],
+                  "radius": 0.08
+                },
+                "position": [
+                  0,
+                  0.35,
+                  0
+                ],
+                "material": {
+                  "preset": "plastic_matte",
+                  "color": "#1c1917"
+                }
+              },
+              {
+                "id": "skitter_eye_l",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.09
+                },
+                "position": [
+                  -0.2,
+                  0.42,
+                  0.46
+                ],
+                "material": {
+                  "preset": "emissive_light",
+                  "color": "#ef4444",
+                  "emissive": "#dc2626",
+                  "emissiveIntensity": 4
+                }
+              },
+              {
+                "id": "skitter_eye_r",
+                "shape": {
+                  "type": "sphere",
+                  "radius": 0.09
+                },
+                "position": [
+                  0.2,
+                  0.42,
+                  0.46
+                ],
+                "material": {
+                  "preset": "emissive_light",
+                  "color": "#ef4444",
+                  "emissive": "#dc2626",
+                  "emissiveIntensity": 4
+                }
+              },
+              {
+                "id": "skitter_mandible_l",
+                "shape": {
+                  "type": "capsule",
+                  "radius": 0.04,
+                  "length": 0.25
+                },
+                "position": [
+                  -0.14,
+                  0.22,
+                  0.58
+                ],
+                "rotation": [
+                  25,
+                  20,
+                  0
+                ],
+                "material": {
+                  "preset": "metal_gold",
+                  "color": "#eab308"
+                }
+              },
+              {
+                "id": "skitter_mandible_r",
+                "shape": {
+                  "type": "capsule",
+                  "radius": 0.04,
+                  "length": 0.25
+                },
+                "position": [
+                  0.14,
+                  0.22,
+                  0.58
+                ],
+                "rotation": [
+                  25,
+                  -20,
+                  0
+                ],
+                "material": {
+                  "preset": "metal_gold",
+                  "color": "#eab308"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "arena-exit-barrier",
+      "name": "Arena Exit Barrier",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "ArenaBarrier"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.2,
+              -73.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              7.2,
+              4.2,
+              0.8
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#315b48",
+            "roughness": 0.8,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 7.2,
+              "y": 4.2,
+              "z": 0.8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "bridge-start-ledge",
+      "name": "Drowned Bridge Starting Ledge",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.25,
+              -75
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              7.5,
+              0.6,
+              4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 7.5,
+              "y": 0.6,
+              "z": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "temporal-bridge",
+      "name": "Ancient Temporal Bridge",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "TemporalBridge",
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              -3.5,
+              -84
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              4.4,
+              0.5,
+              14
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#475569",
+            "roughness": 0.7,
+            "metalness": 0.3
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 4.4,
+              "y": 0.5,
+              "z": 14
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "bridge-grapple-chain",
+      "name": "Bridge Overhead Grapple Chain",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "GrapplePoint"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              6.4,
+              -84
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.95,
+              0.95,
+              0.95
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#8debff",
+            "roughness": 0.2,
+            "metalness": 0.5
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.8,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "bridge-end-ledge",
+      "name": "Drowned Bridge Exit Ledge",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.25,
+              -93
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              8,
+              0.6,
+              5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 8,
+              "y": 0.6,
+              "z": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "sanctum-plaza",
+      "name": "Lily Echo Sanctuary Dais",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Ground"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.35,
+              -109
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              20,
+              0.8,
+              24
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1e293b",
+            "roughness": 0.85,
+            "metalness": 0.1
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 20,
+              "y": 0.8,
+              "z": 24
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "chrono-altar-base",
+      "name": "Chrono Altar Base",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.9,
+              -107
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              2.8,
+              0.6,
+              2.8
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#334155",
+            "roughness": 0.7,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 2.8,
+              "y": 0.6,
+              "z": 2.8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "chrono-altar-core",
+      "name": "Chrono Altar Relic Dais",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "ChronoAltar"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.45,
+              -107
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.7,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#eab308",
+            "roughness": 0.2,
+            "metalness": 0.8
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1.2,
+              "y": 0.7,
+              "z": 1.2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "petal-3-collectible",
+      "name": "Memory Petal 3",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "MemoryPetal"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.1,
+              -107
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.45,
+              0.45,
+              0.45
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#fcd34d",
+            "roughness": 0.15,
+            "metalness": 0.3
+          }
+        },
+        {
+          "type": "SphereCollider",
+          "data": {
+            "radius": 0.6,
+            "isTrigger": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chrono-lily-stem",
+      "name": "Chrono Lily Giant Stem",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.6,
+              -120
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.65,
+              5.2,
+              0.65
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#065f46",
+            "roughness": 0.6,
+            "metalness": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "chrono-lily-bulb",
+      "name": "Chrono Lily Giant Core",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              5.4,
+              -120
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              2.2,
+              2.2,
+              2.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "sphere",
+            "color": "#38bdf8",
+            "roughness": 0.1,
+            "metalness": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "light-chrono-lily",
+      "name": "Chrono Lily Radiant Aura",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              6.2,
+              -120
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "point",
+            "color": "#38bdf8",
+            "intensity": 90,
+            "range": 45,
+            "castShadow": false
+          }
+        }
+      ]
+    }
+  ]
+}

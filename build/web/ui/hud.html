@@ -1,0 +1,507 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Quicksand:wght@600;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hud-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: 'Quicksand', system-ui, sans-serif;
+    color: #e2e8f0;
+    overflow: hidden;
+  }
+
+  /* Top-Left: Sir Croak Status */
+  .status-panel {
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(21, 45, 43, 0.9), rgba(15, 23, 42, 0.9));
+    border: 1.5px solid rgba(50, 217, 208, 0.45);
+    padding: 12px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 16px rgba(50, 217, 208, 0.15);
+    backdrop-filter: blur(8px);
+  }
+
+  .crest {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #32d9d0, #065f46);
+    border: 2px solid #8debff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 0 16px rgba(50, 217, 208, 0.5);
+  }
+
+  .status-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .knight-name {
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #e8be67;
+    text-shadow: 0 0 12px rgba(232, 190, 103, 0.4);
+  }
+
+  .hp-bar-bg {
+    width: 160px;
+    height: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(50, 217, 208, 0.4);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .hp-bar-fill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
+  }
+
+  .pulse-status {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #38bdf8;
+    text-transform: uppercase;
+  }
+
+  /* Top-Center: Objective Banner */
+  .objective-banner {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.88);
+    border: 1.5px solid rgba(232, 190, 103, 0.5);
+    padding: 10px 24px;
+    border-radius: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .objective-title {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #e8be67;
+    text-transform: uppercase;
+  }
+
+  .objective-text {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: 0.8px;
+  }
+
+  .interact-prompt {
+    display: none;
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #38bdf8;
+    background: rgba(6, 78, 59, 0.6);
+    padding: 3px 12px;
+    border-radius: 12px;
+    border: 1px solid #34d399;
+    animation: pulse 1.2s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.85; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  /* Top-Right: Memory Petals */
+  .petals-panel {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(15, 23, 42, 0.88);
+    border: 1.5px solid rgba(50, 217, 208, 0.4);
+    padding: 10px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+  }
+
+  .petals-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #94a3b8;
+    text-transform: uppercase;
+  }
+
+  .petals-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .petal-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1.5px dashed rgba(148, 163, 184, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    opacity: 0.35;
+    transition: all 0.4s ease;
+  }
+
+  .petal-badge.active {
+    opacity: 1;
+    border-style: solid;
+    border-color: #fcd34d;
+    background: radial-gradient(circle, #f59e0b, #78350f);
+    box-shadow: 0 0 16px rgba(251, 191, 36, 0.8);
+    transform: scale(1.15);
+  }
+
+  /* Center: Grapple Crosshair */
+  .crosshair-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .crosshair-reticle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(226, 232, 240, 0.45);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.25s ease;
+  }
+
+  .crosshair-reticle::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background: rgba(226, 232, 240, 0.6);
+    border-radius: 50%;
+  }
+
+  .crosshair-wrap.locked .crosshair-reticle {
+    width: 42px;
+    height: 42px;
+    border-color: #32d9d0;
+    box-shadow: 0 0 20px rgba(50, 217, 208, 0.9);
+    transform: rotate(45deg);
+  }
+
+  .crosshair-wrap.locked .crosshair-reticle::before {
+    background: #e8be67;
+    inset: 12px;
+  }
+
+  .grapple-hint {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: rgba(226, 232, 240, 0.7);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    background: rgba(15, 23, 42, 0.65);
+    padding: 3px 12px;
+    border-radius: 12px;
+  }
+
+  .crosshair-wrap.locked .grapple-hint {
+    color: #8debff;
+    border: 1px solid rgba(50, 217, 208, 0.6);
+  }
+
+  /* Bottom-Center: Temporal Bridge Decay */
+  .bridge-timer-wrap {
+    display: none;
+    position: absolute;
+    bottom: 84px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.9);
+    border: 1.5px solid #38bdf8;
+    padding: 8px 24px;
+    border-radius: 20px;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.5);
+  }
+
+  .bridge-timer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #8debff;
+    letter-spacing: 1px;
+  }
+
+  /* Bottom-Right: Controls Legend */
+  .controls-legend {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    color: #94a3b8;
+    backdrop-filter: blur(6px);
+  }
+
+  .control-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .key-badge {
+    color: #e2e8f0;
+    font-weight: 700;
+    background: rgba(51, 65, 85, 0.8);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  /* Toast Lore Notifications */
+  .toast {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(135deg, rgba(21, 45, 43, 0.95), rgba(15, 23, 42, 0.95));
+    border: 1.5px solid #e8be67;
+    padding: 12px 28px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fef08a;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(232, 190, 103, 0.3);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    text-align: center;
+    max-width: 550px;
+    line-height: 1.4;
+  }
+
+  .toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Victory Modal */
+  .victory-modal {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    pointer-events: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 100;
+  }
+
+  .victory-modal.visible {
+    display: flex;
+  }
+
+  .modal-card {
+    background: linear-gradient(135deg, rgba(21, 45, 43, 0.95), rgba(15, 23, 42, 0.95));
+    border: 2px solid #e8be67;
+    border-radius: 24px;
+    padding: 36px 44px;
+    max-width: 520px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(50, 217, 208, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #e8be67, #32d9d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .modal-subtitle {
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.5;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 8px 0;
+  }
+
+  .stat-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(50, 217, 208, 0.3);
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 1px;
+  }
+
+  .stat-val {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #e8be67;
+    margin-top: 2px;
+  }
+
+  .btn-primary {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #32d9d0, #0d9488);
+    color: #0f172a;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(50, 217, 208, 0.5);
+    transition: transform 0.2s ease;
+    align-self: center;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="hud-root">
+  <!-- Top-Left: Sir Croak Status -->
+  <div class="status-panel">
+    <div class="crest">🐸</div>
+    <div class="status-details">
+      <div class="knight-name">SIR CROAK</div>
+      <div class="hp-bar-bg">
+        <div id="hp-bar-fill" class="hp-bar-fill"></div>
+      </div>
+      <div id="pulse-status" class="pulse-status">CHRONO PULSE [R] READY</div>
+    </div>
+  </div>
+
+  <!-- Top-Center: Quest Objective & Interaction Prompt -->
+  <div class="objective-banner">
+    <div class="objective-title">CURRENT QUEST</div>
+    <div id="objective-text" class="objective-text">Traverse the Root Crossing with Tongue Grapple [Q]</div>
+    <div id="interact-prompt" class="interact-prompt">[E / USE] Rotate Water Valve</div>
+  </div>
+
+  <!-- Top-Right: Memory Petals -->
+  <div class="petals-panel">
+    <div class="petals-label">MEMORY PETALS</div>
+    <div class="petals-row">
+      <div id="petal-badge-1" class="petal-badge">🌸</div>
+      <div id="petal-badge-2" class="petal-badge">🌸</div>
+      <div id="petal-badge-3" class="petal-badge">🌸</div>
+    </div>
+  </div>
+
+  <!-- Center: Grapple Crosshair -->
+  <div id="crosshair" class="crosshair-wrap">
+    <div class="crosshair-reticle"></div>
+    <div id="grapple-hint" class="grapple-hint">AIM AT ANCHORS TO GRAPPLE</div>
+  </div>
+
+  <!-- Bottom-Center: Temporal Bridge Decay -->
+  <div id="bridge-timer-wrap" class="bridge-timer-wrap">
+    <div id="bridge-timer-text" class="bridge-timer-text">TEMPORAL BRIDGE: 16.0s</div>
+  </div>
+
+  <!-- Bottom-Right: Controls Legend -->
+  <div class="controls-legend">
+    <div class="control-row"><span>Move:</span><span class="key-badge">WASD</span></div>
+    <div class="control-row"><span>Jump:</span><span class="key-badge">Space</span></div>
+    <div class="control-row"><span>Grapple:</span><span class="key-badge">Q / R-Click</span></div>
+    <div class="control-row"><span>Attack:</span><span class="key-badge">L-Click</span></div>
+    <div class="control-row"><span>Pulse:</span><span class="key-badge">R</span></div>
+    <div class="control-row"><span>Interact:</span><span class="key-badge">E</span></div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">🐸 Welcome to Frog Knight: Chrono Lily</div>
+
+  <!-- Victory Modal -->
+  <div id="victory-modal" class="victory-modal">
+    <div class="modal-card">
+      <div class="modal-title">THE TIME LOOP PRESERVED</div>
+      <div class="modal-subtitle">
+        Sir Croak has traversed the Drowned Verge, restored the ancient streams, vanquished the Regent's Sentinel, and harmonized with the Chrono Lily. The primordial flower echoes across eternity!
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">TIME</div>
+          <div id="stat-time" class="stat-val">2m 45s</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">PETALS</div>
+          <div id="stat-petals" class="stat-val">3/3</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">SWINGS</div>
+          <div id="stat-swings" class="stat-val">12</div>
+        </div>
+      </div>
+      <button id="btn-play-again" class="btn-primary" data-interactive="true">EMBARK ANEW</button>
+    </div>
+  </div>
+</div>

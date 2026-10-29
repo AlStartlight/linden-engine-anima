@@ -1,0 +1,5439 @@
+{
+  "entities": [
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 3.6,
+              "z": -5.8
+            },
+            "rotation": {
+              "x": -16,
+              "y": 180,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "aspect": 1.7777777777777777,
+            "backgroundColor": {
+              "a": 1,
+              "b": 0.1,
+              "g": 0.1,
+              "r": 0.1
+            },
+            "far": 500,
+            "fov": 62,
+            "isActive": true,
+            "isEnabled": true,
+            "near": 0.1
+          },
+          "type": "Camera"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "props": {
+              "distance": 5.8,
+              "height": 2.2
+            },
+            "src": "scripts/ThirdPersonCamera.ts"
+          },
+          "type": "Script"
+        }
+      ],
+      "id": "camera-rig",
+      "layer": 0,
+      "name": "Camera Rig",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "MainCamera"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 15,
+              "y": 25,
+              "z": 20
+            },
+            "rotation": {
+              "x": 50,
+              "y": -30,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#e2e8f0",
+            "intensity": 2.6,
+            "isEnabled": true,
+            "range": 100,
+            "type": "directional"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "sun-light",
+      "layer": 0,
+      "name": "Swamp Moonlight",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -0.3,
+              "z": 60
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 60,
+              "y": 0.2,
+              "z": 140
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#0e7490",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.08
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "swamp-water",
+      "layer": 0,
+      "name": "Bioluminescent Swamp Water",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "SwampWater"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -2.5,
+              "z": 60
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 64,
+              "y": 0.4,
+              "z": 144
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#022c22",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.95
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "swamp-bed",
+      "layer": 0,
+      "name": "Deep Swamp Bed",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 1.2,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "height": 2,
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.5
+          },
+          "type": "CapsuleCollider"
+        },
+        {
+          "data": {
+            "height": 2,
+            "isEnabled": true,
+            "isGrounded": false,
+            "radius": 0.5,
+            "skinWidth": 0.08,
+            "slopeLimit": 50,
+            "stepOffset": 0.45
+          },
+          "type": "CharacterController"
+        },
+        {
+          "data": {
+            "acceleration": 30,
+            "airControl": 0.55,
+            "analogWalk": true,
+            "cameraRelative": true,
+            "coyoteTime": 0.1,
+            "crouchAction": "Crouch",
+            "crouchSpeed": 2,
+            "deceleration": 40,
+            "gravity": 21,
+            "isEnabled": true,
+            "jumpAction": "Jump",
+            "jumpBuffer": 0.1,
+            "jumpHeight": 2.3,
+            "lockAxis": "none",
+            "lookAction": "Look",
+            "lookSpeed": 180,
+            "maxJumps": 1,
+            "mode": "walk",
+            "moveAction": "Move",
+            "orientToMovement": true,
+            "qeMode": "turn",
+            "rotationSmoothing": 12,
+            "sprintAction": "Sprint",
+            "sprintSpeed": 7.6,
+            "turnAction": "Turn",
+            "turnSpeed": 180,
+            "verticalAction": "Vertical",
+            "walkSpeed": 4.5
+          },
+          "type": "CharacterMovement"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "mode": "screen",
+            "pixelSize": 0.01,
+            "pointerEvents": true,
+            "src": "ui/hud.html",
+            "zIndex": 0
+          },
+          "type": "HtmlUI"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "props": {
+              "maxGrappleDist": 22,
+              "reelSpeed": 4.8,
+              "swingStrength": 46
+            },
+            "src": "scripts/FrogKnightController.ts"
+          },
+          "type": "Script"
+        }
+      ],
+      "id": "player",
+      "layer": 0,
+      "name": "FrogKnight",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Player"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -0.5965156221587052,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "animation": "",
+            "castShadow": true,
+            "category": "",
+            "collider": "none",
+            "isEnabled": true,
+            "merge": true,
+            "parts": [
+              {
+                "id": "feet_l",
+                "material": {
+                  "color": "#15803d",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  -0.24,
+                  0.04,
+                  0.08
+                ],
+                "shape": {
+                  "radius": 0.03,
+                  "size": [
+                    0.22,
+                    0.08,
+                    0.32
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "id": "feet_r",
+                "material": {
+                  "color": "#15803d",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0.24,
+                  0.04,
+                  0.08
+                ],
+                "shape": {
+                  "radius": 0.03,
+                  "size": [
+                    0.22,
+                    0.08,
+                    0.32
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "id": "legs_l",
+                "material": {
+                  "color": "#16a34a",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  -0.25,
+                  0.2,
+                  -0.02
+                ],
+                "shape": {
+                  "radius": 0.17,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "legs_r",
+                "material": {
+                  "color": "#16a34a",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0.25,
+                  0.2,
+                  -0.02
+                ],
+                "shape": {
+                  "radius": 0.17,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "body",
+                "material": {
+                  "color": "#15803d",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0,
+                  0.38,
+                  0
+                ],
+                "shape": {
+                  "radius": 0.33,
+                  "type": "sphere"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "breastplate",
+                "material": {
+                  "preset": "metal_steel"
+                },
+                "position": [
+                  0,
+                  0.44,
+                  0.03
+                ],
+                "shape": {
+                  "radius": 0.08,
+                  "size": [
+                    0.46,
+                    0.3,
+                    0.36
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "emblem",
+                "material": {
+                  "preset": "metal_gold"
+                },
+                "position": [
+                  0,
+                  0.45,
+                  0.22
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  45
+                ],
+                "shape": {
+                  "radius": 0.02,
+                  "size": [
+                    0.12,
+                    0.12,
+                    0.03
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "belly",
+                "material": {
+                  "color": "#fef9c3",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0,
+                  0.28,
+                  0.18
+                ],
+                "shape": {
+                  "radius": 0.21,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "head",
+                "material": {
+                  "color": "#16a34a",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0,
+                  0.7,
+                  0.02
+                ],
+                "shape": {
+                  "radius": 0.31,
+                  "type": "sphere"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "eye_bump_l",
+                "material": {
+                  "color": "#16a34a",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  -0.2,
+                  0.88,
+                  0.08
+                ],
+                "shape": {
+                  "radius": 0.13,
+                  "type": "sphere"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "eye_bump_r",
+                "material": {
+                  "color": "#16a34a",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0.2,
+                  0.88,
+                  0.08
+                ],
+                "shape": {
+                  "radius": 0.13,
+                  "type": "sphere"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "eyeball_l",
+                "material": {
+                  "color": "#fef08a",
+                  "preset": "plastic_glossy"
+                },
+                "position": [
+                  -0.2,
+                  0.89,
+                  0.16
+                ],
+                "shape": {
+                  "radius": 0.09,
+                  "type": "sphere"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "eyeball_r",
+                "material": {
+                  "color": "#fef08a",
+                  "preset": "plastic_glossy"
+                },
+                "position": [
+                  0.2,
+                  0.89,
+                  0.16
+                ],
+                "shape": {
+                  "radius": 0.09,
+                  "type": "sphere"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "pupil_l",
+                "material": {
+                  "color": "#020617",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  -0.2,
+                  0.89,
+                  0.25
+                ],
+                "shape": {
+                  "radius": 0.01,
+                  "size": [
+                    0.08,
+                    0.03,
+                    0.02
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "pupil_r",
+                "material": {
+                  "color": "#020617",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0.2,
+                  0.89,
+                  0.25
+                ],
+                "shape": {
+                  "radius": 0.01,
+                  "size": [
+                    0.08,
+                    0.03,
+                    0.02
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "helmet",
+                "material": {
+                  "preset": "metal_steel"
+                },
+                "position": [
+                  0,
+                  0.88,
+                  -0.04
+                ],
+                "shape": {
+                  "radius": 0.06,
+                  "size": [
+                    0.38,
+                    0.2,
+                    0.34
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "allowOverlap": true,
+                "id": "helmet_visor",
+                "material": {
+                  "preset": "metal_gold"
+                },
+                "position": [
+                  0,
+                  0.82,
+                  0.16
+                ],
+                "shape": {
+                  "radius": 0.01,
+                  "size": [
+                    0.26,
+                    0.05,
+                    0.04
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "id": "plume",
+                "material": {
+                  "color": "#06b6d4",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0,
+                  1.05,
+                  -0.07
+                ],
+                "rotation": [
+                  -25,
+                  0,
+                  0
+                ],
+                "shape": {
+                  "length": 0.22,
+                  "radius": 0.04,
+                  "type": "capsule"
+                }
+              },
+              {
+                "id": "shoulder_l",
+                "material": {
+                  "preset": "metal_steel"
+                },
+                "position": [
+                  -0.34,
+                  0.48,
+                  0
+                ],
+                "shape": {
+                  "radius": 0.12,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "shoulder_r",
+                "material": {
+                  "preset": "metal_steel"
+                },
+                "position": [
+                  0.34,
+                  0.48,
+                  0
+                ],
+                "shape": {
+                  "radius": 0.12,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "shield",
+                "material": {
+                  "preset": "wood_teak"
+                },
+                "position": [
+                  -0.42,
+                  0.38,
+                  0.12
+                ],
+                "shape": {
+                  "radius": 0.06,
+                  "size": [
+                    0.06,
+                    0.44,
+                    0.36
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "id": "shield_boss",
+                "material": {
+                  "preset": "metal_gold"
+                },
+                "position": [
+                  -0.46,
+                  0.38,
+                  0.12
+                ],
+                "shape": {
+                  "radius": 0.06,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "sword_blade",
+                "material": {
+                  "color": "#38bdf8",
+                  "preset": "metal_chrome"
+                },
+                "position": [
+                  0.42,
+                  0.44,
+                  0.18
+                ],
+                "rotation": [
+                  30,
+                  0,
+                  -15
+                ],
+                "shape": {
+                  "radius": 0.01,
+                  "size": [
+                    0.035,
+                    0.52,
+                    0.02
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "id": "sword_guard",
+                "material": {
+                  "preset": "metal_gold"
+                },
+                "position": [
+                  0.38,
+                  0.24,
+                  0.1
+                ],
+                "rotation": [
+                  30,
+                  0,
+                  -15
+                ],
+                "shape": {
+                  "radius": 0.01,
+                  "size": [
+                    0.12,
+                    0.03,
+                    0.04
+                  ],
+                  "type": "roundedBox"
+                }
+              }
+            ],
+            "placement": "floor",
+            "receiveShadow": true,
+            "src": ""
+          },
+          "type": "Model"
+        }
+      ],
+      "id": "frog-visual-model",
+      "layer": 0,
+      "name": "FrogKnightVisual",
+      "parentId": "player",
+      "static": true,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.1,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 10,
+              "y": 0.6,
+              "z": 10
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 10,
+              "y": 0.6,
+              "z": 10
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "shrine-platform",
+      "layer": 0,
+      "name": "Wake Shrine Platform",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -3.8,
+              "y": 2,
+              "z": -3.8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "shrine-col-1",
+      "layer": 0,
+      "name": "Shrine Pillar NW",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 3.8,
+              "y": 2,
+              "z": -3.8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "shrine-col-2",
+      "layer": 0,
+      "name": "Shrine Pillar NE",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -3.8,
+              "y": 2,
+              "z": 3.8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "shrine-col-3",
+      "layer": 0,
+      "name": "Shrine Pillar SW",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 3.8,
+              "y": 2,
+              "z": 3.8
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "shrine-col-4",
+      "layer": 0,
+      "name": "Shrine Pillar SE",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 2.8,
+              "z": 1
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f59e0b",
+            "intensity": 35,
+            "isEnabled": true,
+            "range": 18,
+            "type": "point"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "shrine-torch",
+      "layer": 0,
+      "name": "Shrine Warm Light",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 4.4,
+              "z": 10.5
+            },
+            "rotation": {
+              "x": -12,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.4,
+              "y": 0.8,
+              "z": 9.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#3f2b1c",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.05,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.9
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "living-root-arch",
+      "layer": 0,
+      "name": "Living Root Arched Trunk",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 4.6,
+              "z": 10.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#fbbf24",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.4,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.8
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "living-root-anchor",
+      "layer": 0,
+      "name": "Living Root Grapple Anchor",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "GrapplePoint"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 4.8,
+              "z": 10.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#32d9d0",
+            "intensity": 45,
+            "isEnabled": true,
+            "range": 22,
+            "type": "point"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "root-spore-light",
+      "layer": 0,
+      "name": "Root Spore Glow",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.15,
+              "z": 16.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 8,
+              "y": 0.6,
+              "z": 6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 8,
+              "y": 0.6,
+              "z": 6
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "root-landing-platform",
+      "layer": 0,
+      "name": "Root Crossing Landing",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -3,
+              "y": 0.2,
+              "z": 21
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 3.4,
+              "y": 0.35,
+              "z": 3.4
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#10b981",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.45
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 3.4,
+              "y": 0.35,
+              "z": 3.4
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "lily-pad-1",
+      "layer": 0,
+      "name": "Giant Lily Pad 1",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "LilyPad",
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.65,
+              "y": 0.45,
+              "z": 0.65
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#06b6d4",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "lily-flower-1",
+      "layer": 0,
+      "name": "Lily Blossom 1",
+      "parentId": "lily-pad-1",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -3,
+              "y": 1.3,
+              "z": 21
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.45,
+              "y": 0.45,
+              "z": 0.45
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#fcd34d",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.3,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.15
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.6
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "petal-1-collectible",
+      "layer": 0,
+      "name": "Memory Petal 1",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "MemoryPetal"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 3,
+              "y": 0.25,
+              "z": 26
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 3.5,
+              "y": 0.35,
+              "z": 3.5
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#10b981",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.45
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 3.5,
+              "y": 0.35,
+              "z": 3.5
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "lily-pad-2",
+      "layer": 0,
+      "name": "Giant Lily Pad 2",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "LilyPad",
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.65,
+              "y": 0.45,
+              "z": 0.65
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#c084fc",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "lily-flower-2",
+      "layer": 0,
+      "name": "Lily Blossom 2",
+      "parentId": "lily-pad-2",
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.2,
+              "z": 31
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 3.6,
+              "y": 0.35,
+              "z": 3.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#10b981",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.45
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 3.6,
+              "y": 0.35,
+              "z": 3.6
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "lily-pad-3",
+      "layer": 0,
+      "name": "Giant Lily Pad 3",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "LilyPad",
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 5.6,
+              "z": 26
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.9,
+              "z": 0.9
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#8debff",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.3,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.8
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "canopy-vine-anchor",
+      "layer": 0,
+      "name": "Canopy Vine Anchor",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "GrapplePoint"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.25,
+              "z": 43
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 16,
+              "y": 0.6,
+              "z": 17
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 16,
+              "y": 0.6,
+              "z": 17
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "ruin-courtyard",
+      "layer": 0,
+      "name": "Three Streams Courtyard Floor",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -8,
+              "y": 2.2,
+              "z": 43
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 17
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 17
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "ruin-wall-left",
+      "layer": 0,
+      "name": "Three Streams Left Wall",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 8,
+              "y": 2.2,
+              "z": 43
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 17
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 3.8,
+              "z": 17
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "ruin-wall-right",
+      "layer": 0,
+      "name": "Three Streams Right Wall",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -4,
+              "y": 0.5,
+              "z": 37
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 0.9,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#475569",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 0.9,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "valve-pedestal-1",
+      "layer": 0,
+      "name": "Valve Pedestal 1",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -4,
+              "y": 1.05,
+              "z": 37
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#eab308",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.8,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.25
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "valve-1",
+      "layer": 0,
+      "name": "Water Valve 1",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "WaterValve"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 36
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 0.9,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#475569",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 0.9,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "valve-pedestal-2",
+      "layer": 0,
+      "name": "Valve Pedestal 2",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 1.05,
+              "z": 36
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#eab308",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.8,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.25
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "valve-2",
+      "layer": 0,
+      "name": "Water Valve 2",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "WaterValve"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 4,
+              "y": 0.5,
+              "z": 37
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 0.9,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#475569",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.8,
+              "y": 0.9,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "valve-pedestal-3",
+      "layer": 0,
+      "name": "Valve Pedestal 3",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 4,
+              "y": 1.05,
+              "z": 37
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#eab308",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.8,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.25
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 0.85,
+              "y": 0.2,
+              "z": 0.85
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "valve-3",
+      "layer": 0,
+      "name": "Water Valve 3",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "WaterValve"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -4,
+              "y": 0.38,
+              "z": 44.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.1,
+              "z": 11
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#32d9d0",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "water-channel-1",
+      "layer": 0,
+      "name": "Water Channel Left",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.38,
+              "z": 44
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.1,
+              "z": 12
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#32d9d0",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "water-channel-2",
+      "layer": 0,
+      "name": "Water Channel Mid",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 4,
+              "y": 0.38,
+              "z": 44.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.9,
+              "y": 0.1,
+              "z": 11
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#32d9d0",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "water-channel-3",
+      "layer": 0,
+      "name": "Water Channel Right",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -3.8,
+              "y": 3.2,
+              "z": 50.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "ruin-gateway-arch-l",
+      "layer": 0,
+      "name": "Rune Gateway Arch Left",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 3.8,
+              "y": 3.2,
+              "z": 50.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "ruin-gateway-arch-r",
+      "layer": 0,
+      "name": "Rune Gateway Arch Right",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 5.6,
+              "z": 50.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 8.8,
+              "y": 0.8,
+              "z": 1.4
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 8.8,
+              "y": 0.8,
+              "z": 1.4
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "ruin-gateway-arch-top",
+      "layer": 0,
+      "name": "Rune Gateway Arch Top",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 2.4,
+              "z": 50.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 6.4,
+              "y": 4.4,
+              "z": 0.6
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.4,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.7
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 6.4,
+              "y": 4.4,
+              "z": 0.6
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "rune-gate-door",
+      "layer": 0,
+      "name": "Ancient Rune Gate Door",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "RuneGateDoor"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -6.5,
+              "y": 1.6,
+              "z": 45
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.45,
+              "y": 0.45,
+              "z": 0.45
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#fcd34d",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.3,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.15
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.6
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "petal-2-collectible",
+      "layer": 0,
+      "name": "Memory Petal 2",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "MemoryPetal"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 3.6,
+              "z": 44
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#32d9d0",
+            "intensity": 55,
+            "isEnabled": true,
+            "range": 24,
+            "type": "point"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "rune-light",
+      "layer": 0,
+      "name": "Rune Chamber Glow",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.25,
+              "z": 63
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 18,
+              "y": 0.6,
+              "z": 21
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 18,
+              "y": 0.6,
+              "z": 21
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "arena-platform",
+      "layer": 0,
+      "name": "Regent Arena Platform",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -7,
+              "y": 2.5,
+              "z": 56
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "arena-col-1",
+      "layer": 0,
+      "name": "Arena Pillar NW",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 7,
+              "y": 2.5,
+              "z": 56
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "arena-col-2",
+      "layer": 0,
+      "name": "Arena Pillar NE",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -7,
+              "y": 2.5,
+              "z": 70
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "arena-col-3",
+      "layer": 0,
+      "name": "Arena Pillar SW",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 7,
+              "y": 2.5,
+              "z": 70
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 4.6,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "arena-col-4",
+      "layer": 0,
+      "name": "Arena Pillar SE",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 6.2,
+              "z": 63
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.95,
+              "y": 0.95,
+              "z": 0.95
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#fbbf24",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.6,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.25
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.8
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "arena-lantern-anchor",
+      "layer": 0,
+      "name": "Arena Lantern Anchor",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "GrapplePoint"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 65
+            },
+            "rotation": {
+              "x": 0,
+              "y": 180,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "height": 1.2,
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.6
+          },
+          "type": "CapsuleCollider"
+        },
+        {
+          "data": {
+            "isEnabled": true,
+            "props": {
+              "chargeSpeed": 5.2,
+              "hp": 30
+            },
+            "src": "scripts/BogSkitterAI.ts"
+          },
+          "type": "Script"
+        },
+        {
+          "data": {
+            "animation": "",
+            "castShadow": true,
+            "category": "",
+            "collider": "none",
+            "isEnabled": true,
+            "merge": true,
+            "parts": [
+              {
+                "id": "skitter_body",
+                "material": {
+                  "color": "#1c1917",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0,
+                  0.35,
+                  0
+                ],
+                "shape": {
+                  "radius": 0.08,
+                  "size": [
+                    0.75,
+                    0.38,
+                    0.95
+                  ],
+                  "type": "roundedBox"
+                }
+              },
+              {
+                "id": "skitter_eye_l",
+                "material": {
+                  "color": "#ef4444",
+                  "emissive": "#dc2626",
+                  "emissiveIntensity": 4,
+                  "preset": "emissive_light"
+                },
+                "position": [
+                  -0.2,
+                  0.42,
+                  0.46
+                ],
+                "shape": {
+                  "radius": 0.09,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "skitter_eye_r",
+                "material": {
+                  "color": "#ef4444",
+                  "emissive": "#dc2626",
+                  "emissiveIntensity": 4,
+                  "preset": "emissive_light"
+                },
+                "position": [
+                  0.2,
+                  0.42,
+                  0.46
+                ],
+                "shape": {
+                  "radius": 0.09,
+                  "type": "sphere"
+                }
+              },
+              {
+                "id": "skitter_mandible_l",
+                "material": {
+                  "color": "#eab308",
+                  "preset": "metal_gold"
+                },
+                "position": [
+                  -0.14,
+                  0.22,
+                  0.58
+                ],
+                "rotation": [
+                  25,
+                  20,
+                  0
+                ],
+                "shape": {
+                  "length": 0.25,
+                  "radius": 0.04,
+                  "type": "capsule"
+                }
+              },
+              {
+                "id": "skitter_mandible_r",
+                "material": {
+                  "color": "#eab308",
+                  "preset": "metal_gold"
+                },
+                "position": [
+                  0.14,
+                  0.22,
+                  0.58
+                ],
+                "rotation": [
+                  25,
+                  -20,
+                  0
+                ],
+                "shape": {
+                  "length": 0.25,
+                  "radius": 0.04,
+                  "type": "capsule"
+                }
+              },
+              {
+                "id": "leg_l1",
+                "material": {
+                  "color": "#0c0a09",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  -0.48,
+                  0.25,
+                  0.25
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  45
+                ],
+                "shape": {
+                  "length": 0.45,
+                  "radius": 0.05,
+                  "type": "capsule"
+                }
+              },
+              {
+                "id": "leg_r1",
+                "material": {
+                  "color": "#0c0a09",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0.48,
+                  0.25,
+                  0.25
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  -45
+                ],
+                "shape": {
+                  "length": 0.45,
+                  "radius": 0.05,
+                  "type": "capsule"
+                }
+              },
+              {
+                "id": "leg_l2",
+                "material": {
+                  "color": "#0c0a09",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  -0.48,
+                  0.25,
+                  -0.2
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  45
+                ],
+                "shape": {
+                  "length": 0.45,
+                  "radius": 0.05,
+                  "type": "capsule"
+                }
+              },
+              {
+                "id": "leg_r2",
+                "material": {
+                  "color": "#0c0a09",
+                  "preset": "plastic_matte"
+                },
+                "position": [
+                  0.48,
+                  0.25,
+                  -0.2
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  -45
+                ],
+                "shape": {
+                  "length": 0.45,
+                  "radius": 0.05,
+                  "type": "capsule"
+                }
+              }
+            ],
+            "placement": "floor",
+            "receiveShadow": true,
+            "src": ""
+          },
+          "type": "Model"
+        }
+      ],
+      "id": "bog-skitter",
+      "layer": 0,
+      "name": "Bog Skitter",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Enemy",
+        "BogSkitter"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 2.2,
+              "z": 73.5
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 7.2,
+              "y": 4.2,
+              "z": 0.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#315b48",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 7.2,
+              "y": 4.2,
+              "z": 0.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "arena-exit-barrier",
+      "layer": 0,
+      "name": "Arena Exit Thorn Barrier",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "ArenaBarrier"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 4.2,
+              "z": 63
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#f59e0b",
+            "intensity": 50,
+            "isEnabled": true,
+            "range": 26,
+            "type": "point"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "arena-light",
+      "layer": 0,
+      "name": "Arena Torches Glow",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.25,
+              "z": 75
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 7.5,
+              "y": 0.6,
+              "z": 4
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 7.5,
+              "y": 0.6,
+              "z": 4
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "bridge-start-ledge",
+      "layer": 0,
+      "name": "Drowned Bridge Starting Ledge",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": -3.5,
+              "z": 84
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 4.4,
+              "y": 0.5,
+              "z": 14
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#475569",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.3,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.7
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 4.4,
+              "y": 0.5,
+              "z": 14
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "temporal-bridge",
+      "layer": 0,
+      "name": "Ancient Temporal Bridge",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "TemporalBridge",
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 6.4,
+              "z": 84
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.95,
+              "y": 0.95,
+              "z": 0.95
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#8debff",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.5,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.8
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "bridge-grapple-chain",
+      "layer": 0,
+      "name": "Bridge Overhead Grapple Chain",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "GrapplePoint"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.25,
+              "z": 93
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 8,
+              "y": 0.6,
+              "z": 5
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 8,
+              "y": 0.6,
+              "z": 5
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "bridge-end-ledge",
+      "layer": 0,
+      "name": "Drowned Bridge Exit Ledge",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 3.5,
+              "z": 84
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#8debff",
+            "intensity": 60,
+            "isEnabled": true,
+            "range": 30,
+            "type": "point"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "bridge-rift-light",
+      "layer": 0,
+      "name": "Chrono Rift Glow",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 109
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 0.8,
+              "z": 24
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#1e293b",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.85
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 20,
+              "y": 0.8,
+              "z": 24
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "sanctum-plaza",
+      "layer": 0,
+      "name": "Lily Echo Sanctuary Dais",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "Ground"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -6.5,
+              "y": 3.2,
+              "z": 102
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "sanctum-col-l1",
+      "layer": 0,
+      "name": "Sanctuary Pillar L1",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 6.5,
+              "y": 3.2,
+              "z": 102
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "sanctum-col-r1",
+      "layer": 0,
+      "name": "Sanctuary Pillar R1",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -8.5,
+              "y": 3.2,
+              "z": 114
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "sanctum-col-l2",
+      "layer": 0,
+      "name": "Sanctuary Pillar L2",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 8.5,
+              "y": 3.2,
+              "z": 114
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.8
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 5.8,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "sanctum-col-r2",
+      "layer": 0,
+      "name": "Sanctuary Pillar R2",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 0.9,
+              "z": 107
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.8,
+              "y": 0.6,
+              "z": 2.8
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#334155",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.7
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 2.8,
+              "y": 0.6,
+              "z": 2.8
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "chrono-altar-base",
+      "layer": 0,
+      "name": "Chrono Altar Base",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 1.45,
+              "z": 107
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 0.7,
+              "z": 1.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#eab308",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.8,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": false,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "size": {
+              "x": 1.2,
+              "y": 0.7,
+              "z": 1.2
+            }
+          },
+          "type": "BoxCollider"
+        }
+      ],
+      "id": "chrono-altar-core",
+      "layer": 0,
+      "name": "Chrono Altar Relic Dais",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "ChronoAltar"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 2.1,
+              "z": 107
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.45,
+              "y": 0.45,
+              "z": 0.45
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#fcd34d",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.3,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.15
+          },
+          "type": "MeshRenderer"
+        },
+        {
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "isEnabled": true,
+            "isTrigger": true,
+            "material": {
+              "bounciness": 0.1,
+              "friction": 0.5
+            },
+            "onCollisionEnter": [],
+            "onCollisionExit": [],
+            "onTriggerEnter": [],
+            "onTriggerExit": [],
+            "radius": 0.6
+          },
+          "type": "SphereCollider"
+        }
+      ],
+      "id": "petal-3-collectible",
+      "layer": 0,
+      "name": "Memory Petal 3",
+      "parentId": null,
+      "static": false,
+      "tags": [
+        "MemoryPetal"
+      ]
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 2.6,
+              "z": 120
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.65,
+              "y": 5.2,
+              "z": 0.65
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#065f46",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "cylinder",
+            "receiveShadow": true,
+            "roughness": 0.6
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "chrono-lily-stem",
+      "layer": 0,
+      "name": "Chrono Lily Giant Stem",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 5.4,
+              "z": 120
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 2.2,
+              "y": 2.2,
+              "z": 2.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#38bdf8",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.2,
+            "primitive": "sphere",
+            "receiveShadow": true,
+            "roughness": 0.1
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "chrono-lily-bulb",
+      "layer": 0,
+      "name": "Chrono Lily Giant Core",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -1.4,
+              "y": 5.6,
+              "z": 119
+            },
+            "rotation": {
+              "x": 20,
+              "y": 45,
+              "z": -30
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 0.2,
+              "z": 2.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#8debff",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "chrono-lily-petal-1",
+      "layer": 0,
+      "name": "Chrono Lily Petal NW",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 1.4,
+              "y": 5.6,
+              "z": 119
+            },
+            "rotation": {
+              "x": 20,
+              "y": -45,
+              "z": 30
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 0.2,
+              "z": 2.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#8debff",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "chrono-lily-petal-2",
+      "layer": 0,
+      "name": "Chrono Lily Petal NE",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": -1.4,
+              "y": 5.6,
+              "z": 121
+            },
+            "rotation": {
+              "x": -20,
+              "y": -45,
+              "z": -30
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 0.2,
+              "z": 2.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#8debff",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "chrono-lily-petal-3",
+      "layer": 0,
+      "name": "Chrono Lily Petal SW",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 1.4,
+              "y": 5.6,
+              "z": 121
+            },
+            "rotation": {
+              "x": -20,
+              "y": 45,
+              "z": 30
+            },
+            "scale": {
+              "x": 1.2,
+              "y": 0.2,
+              "z": 2.2
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": true,
+            "color": "#8debff",
+            "isEnabled": true,
+            "isVisible": true,
+            "material": {},
+            "materialId": "",
+            "meshId": "",
+            "metalness": 0.1,
+            "primitive": "box",
+            "receiveShadow": true,
+            "roughness": 0.2
+          },
+          "type": "MeshRenderer"
+        }
+      ],
+      "id": "chrono-lily-petal-4",
+      "layer": 0,
+      "name": "Chrono Lily Petal SE",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    },
+    {
+      "active": true,
+      "components": [
+        {
+          "data": {
+            "children": [],
+            "isEnabled": true,
+            "parent": null,
+            "position": {
+              "x": 0,
+              "y": 6.2,
+              "z": 120
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          },
+          "type": "Transform"
+        },
+        {
+          "data": {
+            "castShadow": false,
+            "color": "#38bdf8",
+            "intensity": 90,
+            "isEnabled": true,
+            "range": 45,
+            "type": "point"
+          },
+          "type": "Light"
+        }
+      ],
+      "id": "light-chrono-lily",
+      "layer": 0,
+      "name": "Chrono Lily Radiant Aura",
+      "parentId": null,
+      "static": false,
+      "tags": []
+    }
+  ],
+  "format": "linden-scene",
+  "name": "Main",
+  "settings": {
+    "ambientColor": "#152d2b",
+    "ambientIntensity": 0.65,
+    "backgroundBlurriness": 0,
+    "environment": "room",
+    "environmentIntensity": 1.25,
+    "exposure": 1.05,
+    "fog": {
+      "color": "#152d2b",
+      "density": 0.015,
+      "enabled": true,
+      "far": 140,
+      "near": 5,
+      "type": "exp2"
+    },
+    "postFx": {
+      "antialias": "smaa",
+      "ao": true,
+      "aoIntensity": 1.2,
+      "bloom": true,
+      "bloomRadius": 0.4,
+      "bloomStrength": 0.45,
+      "bloomThreshold": 0.82,
+      "enabled": true
+    },
+    "shadowQuality": "high",
+    "skybox": null,
+    "sun": {
+      "color": "#e2e8f0",
+      "direction": [
+        0.45,
+        0.95,
+        0.35
+      ],
+      "enabled": true,
+      "intensity": 2.6
+    },
+    "toneMapping": "agx"
+  },
+  "version": 2
+}

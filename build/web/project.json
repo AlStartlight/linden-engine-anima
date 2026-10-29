@@ -1,0 +1,661 @@
+{
+  "name": "ANIMA",
+  "version": "0.1.0",
+  "renderer": "webgpu",
+  "tags": [
+    "Player",
+    "Enemy",
+    "Pickup",
+    "Coin",
+    "Ground",
+    "Flying"
+  ],
+  "layers": [
+    "Default",
+    "TransparentFX",
+    "Ignore Raycast",
+    "",
+    "Water",
+    "UI",
+    "Player",
+    "Enemy"
+  ],
+  "collisionMatrix": [
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  ],
+  "input": {
+    "actions": [
+      {
+        "name": "Move",
+        "type": "vector2",
+        "bindings": [
+          "Gamepad/LeftStick",
+          "Touch/Joystick"
+        ],
+        "composites": [
+          {
+            "up": [
+              "Keyboard/KeyW"
+            ],
+            "down": [
+              "Keyboard/KeyS"
+            ],
+            "left": [
+              "Keyboard/KeyA"
+            ],
+            "right": [
+              "Keyboard/KeyD"
+            ]
+          },
+          {
+            "up": [
+              "Keyboard/ArrowUp"
+            ],
+            "down": [
+              "Keyboard/ArrowDown"
+            ],
+            "left": [
+              "Keyboard/ArrowLeft"
+            ],
+            "right": [
+              "Keyboard/ArrowRight"
+            ]
+          }
+        ],
+        "deadzone": 0.15
+      },
+      {
+        "name": "Turn",
+        "type": "axis",
+        "bindings": [],
+        "composites": [
+          {
+            "negative": [
+              "Keyboard/KeyQ",
+              "Gamepad/LeftShoulder"
+            ],
+            "positive": [
+              "Keyboard/KeyE",
+              "Gamepad/RightShoulder"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vertical",
+        "type": "axis",
+        "bindings": [],
+        "composites": [
+          {
+            "negative": [
+              "Keyboard/KeyQ",
+              "Gamepad/LeftTrigger"
+            ],
+            "positive": [
+              "Keyboard/KeyE",
+              "Gamepad/RightTrigger"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Look",
+        "type": "vector2",
+        "bindings": [
+          "Mouse/Delta",
+          "Gamepad/RightStick",
+          "Touch/Look"
+        ],
+        "deadzone": 0.15,
+        "sensitivity": 1
+      },
+      {
+        "name": "Jump",
+        "type": "button",
+        "bindings": [
+          "Keyboard/Space",
+          "Gamepad/ButtonSouth"
+        ]
+      },
+      {
+        "name": "Crouch",
+        "type": "button",
+        "bindings": [
+          "Keyboard/KeyC",
+          "Keyboard/ControlLeft",
+          "Gamepad/ButtonEast"
+        ]
+      },
+      {
+        "name": "Grapple",
+        "type": "button",
+        "bindings": [
+          "Keyboard/KeyQ",
+          "Mouse/RightButton",
+          "Gamepad/LeftShoulder",
+          "Touch/Button/Grapple"
+        ]
+      },
+      {
+        "name": "Interact",
+        "type": "button",
+        "bindings": [
+          "Keyboard/KeyE",
+          "Keyboard/KeyF",
+          "Gamepad/ButtonWest",
+          "Touch/Button/Interact"
+        ]
+      },
+      {
+        "name": "Attack",
+        "type": "button",
+        "bindings": [
+          "Mouse/LeftButton",
+          "Gamepad/RightTrigger",
+          "Gamepad/ButtonNorth",
+          "Touch/Button/Attack"
+        ]
+      },
+      {
+        "name": "TimePulse",
+        "type": "button",
+        "bindings": [
+          "Keyboard/KeyR",
+          "Gamepad/LeftTrigger",
+          "Touch/Button/TimePulse"
+        ]
+      },
+      {
+        "name": "Sprint",
+        "type": "button",
+        "bindings": [
+          "Keyboard/ShiftLeft",
+          "Gamepad/LeftStickPress",
+          "Touch/Joystick"
+        ]
+      }
+    ],
+    "touch": {
+      "enabled": "auto",
+      "joystick": {
+        "side": "left",
+        "mode": "floating",
+        "radius": 64
+      },
+      "look": {
+        "enabled": true,
+        "area": "right-half",
+        "sensitivity": 1
+      },
+      "opacity": 0.6,
+      "safeArea": true,
+      "scale": "auto",
+      "buttons": [
+        {
+          "id": "Jump",
+          "action": "Jump",
+          "label": "JUMP",
+          "icon": "jump",
+          "behavior": "hold",
+          "anchor": "bottom-right",
+          "unit": "px",
+          "x": 24,
+          "y": 32,
+          "size": 72
+        },
+        {
+          "id": "Attack",
+          "action": "Attack",
+          "label": "ATK",
+          "icon": "sword",
+          "behavior": "tap",
+          "anchor": "bottom-right",
+          "unit": "px",
+          "x": 112,
+          "y": 48,
+          "size": 60
+        },
+        {
+          "id": "Sprint",
+          "action": "Sprint",
+          "label": "RUN",
+          "icon": "run",
+          "behavior": "hold",
+          "anchor": "bottom-right",
+          "unit": "px",
+          "x": 40,
+          "y": 120,
+          "size": 52
+        },
+        {
+          "id": "Interact",
+          "action": "Interact",
+          "label": "USE",
+          "icon": "use",
+          "behavior": "tap",
+          "anchor": "bottom-right",
+          "unit": "px",
+          "x": 120,
+          "y": 128,
+          "size": 52
+        },
+        {
+          "id": "TurnLeft",
+          "action": "Turn",
+          "value": -1,
+          "label": "Q",
+          "icon": "turn-left",
+          "anchor": "bottom-left",
+          "unit": "px",
+          "x": 24,
+          "y": 190,
+          "size": 44
+        },
+        {
+          "id": "TurnRight",
+          "action": "Turn",
+          "label": "E",
+          "icon": "turn-right",
+          "anchor": "bottom-left",
+          "unit": "px",
+          "x": 80,
+          "y": 190,
+          "size": 44
+        },
+        {
+          "id": "Grapple",
+          "action": "Grapple",
+          "label": "HOOK",
+          "icon": "target",
+          "behavior": "tap",
+          "anchor": "bottom-right",
+          "unit": "px",
+          "x": 190,
+          "y": 40,
+          "size": 52,
+          "color": "#10b981",
+          "pressedColor": "#059669"
+        },
+        {
+          "id": "TimePulse",
+          "action": "TimePulse",
+          "label": "PULSE",
+          "icon": "reload",
+          "behavior": "tap",
+          "anchor": "bottom-right",
+          "unit": "px",
+          "x": 196,
+          "y": 112,
+          "size": 52,
+          "color": "#6366f1",
+          "pressedColor": "#4f46e5"
+        }
+      ]
+    }
+  },
+  "services": [],
+  "scenesInBuild": [
+    "scenes/Main.lscene"
+  ],
+  "exportPresets": [
+    {
+      "id": "preset-windows-desktop",
+      "name": "Windows Desktop",
+      "platform": "windows",
+      "backend": "linden",
+      "arch": [
+        "x64"
+      ],
+      "output": "build/windows/ANIMA.exe",
+      "mode": "release",
+      "appName": "ANIMA"
+    },
+    {
+      "id": "preset-macos-desktop",
+      "name": "macOS",
+      "platform": "macos",
+      "backend": "linden",
+      "arch": [
+        "universal"
+      ],
+      "output": "build/mac/ANIMA.dmg",
+      "mode": "release",
+      "appName": "ANIMA"
+    },
+    {
+      "id": "preset-linux-desktop",
+      "name": "Linux",
+      "platform": "linux",
+      "backend": "linden",
+      "arch": [
+        "x64"
+      ],
+      "output": "build/linux/ANIMA.AppImage",
+      "mode": "release",
+      "appName": "ANIMA"
+    },
+    {
+      "id": "preset-web-html5",
+      "name": "Web",
+      "platform": "web",
+      "backend": "linden",
+      "arch": [
+        "wasm"
+      ],
+      "output": "build/web/index.html",
+      "mode": "release",
+      "appName": "ANIMA"
+    },
+    {
+      "id": "preset-android",
+      "name": "Android",
+      "platform": "android",
+      "backend": "godot",
+      "arch": [
+        "arm64"
+      ],
+      "output": "build/android/ANIMA.apk",
+      "mode": "debug",
+      "appName": "ANIMA"
+    },
+    {
+      "id": "preset-ios",
+      "name": "iOS",
+      "platform": "ios",
+      "backend": "godot",
+      "arch": [
+        "arm64"
+      ],
+      "output": "build/ios/ANIMA.ipa",
+      "mode": "debug",
+      "appName": "ANIMA"
+    }
+  ]
+}
